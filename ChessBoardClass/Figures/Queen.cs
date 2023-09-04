@@ -25,7 +25,14 @@ private ConsoleColor color;
 
         public  void Attack() { }
         public  void Move() { }
-        public  bool CanMoveToPosition(int[] newPosition, int[] coordinates) {return true;}
+        
+        public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol)
+        {
+            int dx = Math.Abs(nCol - cCol);
+            int dy = Math.Abs(nRow - cRow);
+            return dx == dy || cRow == nRow || cCol == nCol;
+        }
+
 
     }
 

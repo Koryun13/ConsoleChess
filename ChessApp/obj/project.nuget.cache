@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A5BnUlBL1kh6ZIBHuqreUEW1WIzH9ywromB0CIfQO1/15E7EYt26lWAha/fcLS5383GWYVth74OPPSkrfwckDA==",
+  "dgSpecHash": "sIYeRCTGAIJDaeJTWBKoPYF4RH2vRbhC3zeF+9viuumDWYcRryE2EQGQhDkW4RsC27FZIuuS7+XY+y68ybUx8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Koryun\\Desktop\\ChessBoard\\ChessApp\\ChessApp.csproj",
+  "projectFilePath": "C:\\Users\\Koryun\\Desktop\\.NET\\ChessBoard\\ChessApp\\ChessApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

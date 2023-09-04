@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UbpyBhvMSCp1OhvD7GflixPuwMNyrgm45KryaeSM/dIJqtH4wIVpHwGm4oToS+vwkT8CnnOhaAXFET4+tEc2xg==",
+  "dgSpecHash": "AE3fuUsqV7SqsKwl3Q/F3c0nqs2N6oG3r3DHPafvhRszHeFK21rgDpx1InwR0yXmyHanwTnmn2IXMyb8lZ5d/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Koryun\\Desktop\\ChessBoard\\ChessBoardClass\\ChessBoardClass.csproj",
+  "projectFilePath": "C:\\Users\\Koryun\\Desktop\\.NET\\ChessBoard\\ChessBoardClass\\ChessBoardClass.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

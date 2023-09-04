@@ -10,6 +10,8 @@ chessBoard1.SetFigureAtPosition(knight,3,3);
 chessBoard1.PrintBoard();
 
 
+
+
 // void RunChess()
 // {
 // int [] cordinates = new int[2];

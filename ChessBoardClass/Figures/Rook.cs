@@ -24,8 +24,14 @@ namespace ChessBoardClass.Shared;
             return figureSymbol;
         }
 
+        public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol)
+        {
+            return cRow == nRow || cCol == nCol;
+        }
         public  void Attack() { }
         public  void Move() { }
-        public  bool CanMoveToPosition(int[] newPosition, int[] coordinates)  {return true;}
+        
+        
+
     }
 

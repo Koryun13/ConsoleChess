@@ -1,4 +1,6 @@
-﻿namespace ChessBoardClass.Shared;
+﻿using System.Runtime.InteropServices;
+
+namespace ChessBoardClass.Shared;
 
 
 public class ChessBoard
@@ -34,14 +36,18 @@ public class ChessBoard
 
    
     public void SetFigureAtPosition(IFigure _figure, int row, int col)
-    {
+    {   
+        int crow = 8 - row;
+        int ccol = col - 1;
+
+
         if (row < 0 || row >= 8 || col < 0 || col >= 8)
         {
             
         }
         else
         {
-           board[8 - row, col - 1].InitFigure(_figure);
+           board[crow, ccol].InitFigure(_figure);
            
            
             //board[8 - row, col - 1].FigureColor = figure.Color;
@@ -70,6 +76,13 @@ public class ChessBoard
                         Console.ForegroundColor = board[row,col].figure.Color;
 
                         Console.Write(board[row, col].figure.GetSymbol() + " ");
+                        board[row+1, col+1].Piece = '4';
+                        Console.Write(board[row+1, col+1].Piece + " ");
+
+
+                        
+
+                    //    Console.Write(board[row, col].)
                         
 
 
@@ -77,7 +90,8 @@ public class ChessBoard
                     else
                     {   
                         Console.ForegroundColor = ConsoleColor.White;
-                        Console.Write("  ");
+                        //Console.Write(' ');
+                        Console.Write(board[row,col].Piece + " ");
                     }
                     
                 }
@@ -88,7 +102,31 @@ public class ChessBoard
 
             Console.WriteLine("  A B C D E F G H");
         }
+        
 
+
+
+
+    public void PrintDigits()
+    {
+        for (int row = 0; row < 8; row++)
+            {
+                Console.Write(8 - row + " "); 
+
+                for (int col = 0; col < 8; col++)
+                {
+                    if(board[row,col].IsOccupied)
+                    {
+                        
+                    }
+                }
+            }
+    }
+
+
+
+
+    }
          // private char GetInitialPiece(int row, int col)
     // {
     
@@ -106,7 +144,7 @@ public class ChessBoard
     // }
 
         
-    }
+    
 
 
 // public class ChessBoard
