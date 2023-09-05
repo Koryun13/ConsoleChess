@@ -5,8 +5,14 @@ using System.Diagnostics;
 
 
 IFigure knight = new Knight(ConsoleColor.White);
+IFigure king =  new King(ConsoleColor.Black);
+IFigure queen = new Queen(ConsoleColor.White);
+IFigure bishop = new Bishop(ConsoleColor.White);
+IFigure rook = new Rook(ConsoleColor.White);
+
+
 ChessBoard chessBoard1 = new ChessBoard();
-chessBoard1.SetFigureAtPosition(knight,1,1);
+chessBoard1.SetFigureAtPosition(knight,3,(int)ChessCrod.C);
 chessBoard1.PrintBoard();
 
 

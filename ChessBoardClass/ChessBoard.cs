@@ -33,47 +33,52 @@ public class ChessBoard
     }
 
    
-    public void SetFigureAtPosition(IFigure _figure, int row, int col)
+    public void SetFigureAtPosition(IFigure figure, int row, int col)
     {   
         int crow = 8 - row;
         int ccol = col - 1;
 
 
-        if (row < 0 || row >= 8 || col < 0 || col >= 8)
-        {
-            
-        }
-        else
+        if(!(row < 0 || row >= 8 || col < 0 || col >= 8))
         {
             try
             {
-            board[crow, ccol].InitFigure(_figure);
 
-            board[crow+1, ccol+1].Piece = '2';
-            board[crow-1, ccol+1].Piece = '2';
-            board[crow+1, ccol-1].Piece = '2';
-            board[crow-1, ccol-1].Piece = '2';
+                for (int row1 = 0; row1 < 8; row1++)
+                {
+                    for (int col1 = 0; col1 < 8; col1++)
+                    {
+                        if(figure.CanMoveToPosition(crow, ccol,row1,col1))
+                        {
+                                board[row1, col1].Piece = '1';
+                        }
+                
+                        
+                    }
+                }
+
+                board[crow, ccol].InitFigure(figure);
+
+                board[crow+1, ccol+1].Piece = '2';
+                board[crow-1, ccol+1].Piece = '2';
+                board[crow+1, ccol-1].Piece = '2';
+                board[crow-1, ccol-1].Piece = '2';
 
 
-            
-            board[crow, ccol+1].Piece = '3';
-            board[crow, ccol-1].Piece = '3';
-            board[crow+1, ccol].Piece = '3';
-            board[crow-1, ccol].Piece = '3';
-         
-           
+                
+                board[crow, ccol+1].Piece = '3';
+                board[crow, ccol-1].Piece = '3';
+                board[crow+1, ccol].Piece = '3';
+                board[crow-1, ccol].Piece = '3';
+            }
+
+            catch(Exception e)
+            {
+                Console.WriteLine("INVALID INPUT ENTRY..."+ e.Message) ;
+            }
         }
-        catch(FormatException)
-        {
-            Console.WriteLine("INVALID INPUT ENTRY...");
-        }
-    }
-
-        
         
     }
-
-    
 
     public void SetPossibleMoves(int row, int col)
     {
@@ -127,12 +132,6 @@ public class ChessBoard
         }
 
         Console.WriteLine("  A B C D E F G H");
-    }
-
-
-    private void SetNumberOfMoves(int row, int col)
-    {
-        
     }
  
 }
