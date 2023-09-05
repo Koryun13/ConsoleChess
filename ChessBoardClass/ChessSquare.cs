@@ -6,8 +6,6 @@ struct ChessSquare
     public int Row { get; }
     public int Col { get; }
     public char Piece { get; set; }
-
-    //public Figure figure;
     public bool IsOccupied{get; set;}
     public IFigure figure{get; set;}
     public ConsoleColor BackgroundColor { get; set; }
@@ -29,8 +27,7 @@ struct ChessSquare
         this.figure = figure;
         FigureColor = figure.Color;
         IsOccupied = true;
-
-      // Piece = figure.GetSymbol();
+        Piece = figure.GetSymbol();
 
     }
 }

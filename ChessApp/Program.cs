@@ -4,10 +4,34 @@ using ChessBoardClass.Shared;
 using System.Diagnostics;
 
 
-IFigure knight = new Knight(ConsoleColor.Black);
+IFigure knight = new Knight(ConsoleColor.White);
 ChessBoard chessBoard1 = new ChessBoard();
-chessBoard1.SetFigureAtPosition(knight,3,3);
+chessBoard1.SetFigureAtPosition(knight,1,1);
 chessBoard1.PrintBoard();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

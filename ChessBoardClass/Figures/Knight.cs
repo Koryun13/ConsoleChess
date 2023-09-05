@@ -1,6 +1,8 @@
 using System.Drawing;
+
 // using time stamp to understend time complexity of the algorithm
 // find the most optimal path to get to the destination.
+
 namespace ChessBoardClass.Shared;
 
 
@@ -34,40 +36,6 @@ namespace ChessBoardClass.Shared;
         int dy = Math.Abs(nRow - cRow);
         return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
     }
-    
-    public void CanMoveToPositionN(int cRow, int cCol)
-    {   
-
-        // int dx = Math.Abs(cCol);
-        // int dy = Math.Abs(nRow - cRow);
-
-        // if(cRow < 8 && cCol < 8 )
-        // {
-        //     if(dx == 1 && dy == 1)
-        //     {
-
-        //     }
-        //     if((dx == 0 && dy == 1)||(dx == 1 && dy == 0))
-        //     {
-                
-        //     }
-        //     if((dx == 2 && dy == 1) || (dx == 1 && dy == 2))
-        //     {
-
-        //     }
-            
-        // }
-        // else
-        // {
-
-        // }
-
-        
-        
-
-         
-    }
-
 
 
         public  void Attack() { }
@@ -76,9 +44,3 @@ namespace ChessBoardClass.Shared;
         
     }
 
-
-
-
-// int dx = Math.Abs(newPosition[0] - coordinates[0]);
-//         int dy = Math.Abs(newPosition[1] - coordinates[1]);
-//         return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
