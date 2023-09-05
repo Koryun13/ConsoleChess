@@ -10,5 +10,5 @@ public interface IFigure
      void Attack();
      void Move();
      public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol);
-    
+    ///kioioio
 }
