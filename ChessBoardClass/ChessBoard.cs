@@ -19,86 +19,65 @@ public class ChessBoard
         {
             for (int col = 0; col < 8; col++)
             {
-                ChessSquare square = CreateChessSquare(row, col);
+                
                 board[row, col] = square;
             }
         }
     }
 
-    private ChessSquare CreateChessSquare(int row, int col)
-    {
-        ConsoleColor bgColor = (row + col) % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Yellow;
-       
-        return new ChessSquare(row, col, bgColor);
-    }
+
+#region logic
 
    
-    public void SetFigureAtPosition(IFigure figure, int row, int col)
-    {   
-        int crow = 8 - row;
-        int ccol = col - 1;
+    // public void SetFigureAtPosition(IFigure figure, int row, int col)
+    // {   
+    //     int crow = 8 - row;
+    //     int ccol = col - 1;
 
 
-        if(!(row < 0 || row >= 8 || col < 0 || col >= 8))
-        {
-            try
-            {
+    //     if(!(row < 0 || row >= 8 || col < 0 || col >= 8))
+    //     {
+    //         try
+    //         {
 
-                for (int row1 = 0; row1 < 8; row1++)
-                {
-                    for (int col1 = 0; col1 < 8; col1++)
-                    {
-                        if(figure.CanMoveToPosition(crow, ccol,row1,col1))
-                        {
-                                board[row1, col1].Piece = '1';
-                        }
+    //             for (int row1 = 0; row1 < 8; row1++)
+    //             {
+    //                 for (int col1 = 0; col1 < 8; col1++)
+    //                 {
+    //                     if(figure.CanMoveToPosition(crow, ccol,row1,col1))
+    //                     {
+    //                             board[row1, col1].Piece = '1';
+    //                     }
                 
                         
-                    }
-                }
+    //                 }
+    //             }
 
-                board[crow, ccol].InitFigure(figure);
+    //             board[crow, ccol].InitFigure(figure);
 
-                board[crow+1, ccol+1].Piece = '2';
-                board[crow-1, ccol+1].Piece = '2';
-                board[crow+1, ccol-1].Piece = '2';
-                board[crow-1, ccol-1].Piece = '2';
+    //             board[crow+1, ccol+1].Piece = '2';
+    //             board[crow-1, ccol+1].Piece = '2';
+    //             board[crow+1, ccol-1].Piece = '2';
+    //             board[crow-1, ccol-1].Piece = '2';
 
 
                 
-                board[crow, ccol+1].Piece = '3';
-                board[crow, ccol-1].Piece = '3';
-                board[crow+1, ccol].Piece = '3';
-                board[crow-1, ccol].Piece = '3';
-            }
+    //             board[crow, ccol+1].Piece = '3';
+    //             board[crow, ccol-1].Piece = '3';
+    //             board[crow+1, ccol].Piece = '3';
+    //             board[crow-1, ccol].Piece = '3';
+    //         }
 
-            catch(Exception e)
-            {
-                Console.WriteLine("INVALID INPUT ENTRY..."+ e.Message) ;
-            }
-        }
+    //         catch(Exception e)
+    //         {
+    //             Console.WriteLine("INVALID INPUT ENTRY..."+ e.Message) ;
+    //         }
+    //     }
         
-    }
+    // }
 
-    public void SetPossibleMoves(int row, int col)
-    {
-        int crow = 8 - row;
-        int ccol = col - 1;
+#endregion
 
-
-        if (row < 0 || row >= 8 || col < 0 || col >= 8)
-        {
-            
-        }
-        else
-        {
-            if(board[crow, ccol].IsOccupied)
-            {
-
-            }
-        }
-
-    }
     public void PrintBoard()
     {
         Console.WriteLine("  A B C D E F G H"); 
@@ -110,13 +89,13 @@ public class ChessBoard
             for (int col = 0; col < 8; col++)
 
             {   
-                Console.BackgroundColor = board[row, col].BackgroundColor;
+                Console.BackgroundColor = (row + col) % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Yellow;
                 
                 if(board[row,col].IsOccupied)
                 {
                     
                     
-                    Console.ForegroundColor = board[row,col].figure.Color;
+                    Console.ForegroundColor = board[row,col].Figure.Color;
                     Console.Write(board[row, col].Piece + " ");
                 }
                 else

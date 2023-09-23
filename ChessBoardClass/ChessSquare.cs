@@ -1,33 +1,27 @@
-using System;
 namespace ChessBoardClass.Shared;
 
 struct ChessSquare
 {
-    public int Row { get; }
-    public int Col { get; }
+    public Coordinate Coordinate { get; }
     public char Piece { get; set; }
-    public bool IsOccupied{get; set;}
-    public IFigure figure{get; set;}
-    public ConsoleColor BackgroundColor { get; set; }
+    public bool IsOccupied { get; set; }
+    public IFigure Figure { get; set; }
+    //public ConsoleColor BackgroundColor { get; set; }
     public ConsoleColor FigureColor { get; set; }
 
-    public ChessSquare(int row, int col, ConsoleColor bgColor)
+    public ChessSquare(string coordinateString, ConsoleColor bgColor)
     {
-        Row = row;
-        Col = col;
-        BackgroundColor = bgColor;
+        Coordinate = new Coordinate(coordinateString);
+       // BackgroundColor = bgColor;
         IsOccupied = false;
         Piece = ' ';
-
-
     }
-        
+
     public void InitFigure(IFigure figure)
     {
-        this.figure = figure;
+        Figure = figure;
         FigureColor = figure.Color;
         IsOccupied = true;
         Piece = figure.GetSymbol();
-
     }
 }
