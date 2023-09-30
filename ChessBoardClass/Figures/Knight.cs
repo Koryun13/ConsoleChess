@@ -7,30 +7,30 @@ namespace ChessBoardClass.Shared;
 
 
 
-    public class Knight : IFigure
-    {   
-        private ConsoleColor color;
-        private char figureSymbol;
+public class Knight : IFigure
+{
+    private ConsoleColor color;
+    private char figureSymbol;
 
-        public char FigureSymbol{get{return figureSymbol;}}
-        
-        public ConsoleColor Color{get{return color;} set{color = value;}}
+    public char FigureSymbol { get { return figureSymbol; } }
 
-        public Knight(ConsoleColor color)
-            {
-                this.color = color;
-                this.figureSymbol = 'N';
+    public ConsoleColor Color { get { return color; } set { color = value; } }
 
-            }
+    public Knight(ConsoleColor color)
+    {
+        this.color = color;
+        this.figureSymbol = 'N';
+
+    }
 
 
-        public  char GetSymbol()
-        {
-            return figureSymbol;
-        }
+    public char GetSymbol()
+    {
+        return figureSymbol;
+    }
 
-         
-        public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol)
+
+    public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol)
     {
         int dx = Math.Abs(nCol - cCol);
         int dy = Math.Abs(nRow - cRow);
@@ -38,9 +38,9 @@ namespace ChessBoardClass.Shared;
     }
 
 
-        public  void Attack() { }
-        public  void Move() { }
+    public void Attack() { }
+    public void Move() { }
 
-        
-    }
+
+}
 

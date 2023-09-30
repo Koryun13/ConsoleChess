@@ -13,7 +13,6 @@ C:\Users\Koryun\Desktop\ChessBoard\ChessBoardClass\obj\Debug\net7.0\ref\ChessBoa
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\bin\Debug\net7.0\ChessBoardClass.deps.json
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\bin\Debug\net7.0\ChessBoardClass.dll
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\bin\Debug\net7.0\ChessBoardClass.pdb
-C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\obj\Debug\net7.0\ChessBoardClass.csproj.AssemblyReference.cache
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\obj\Debug\net7.0\ChessBoardClass.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\obj\Debug\net7.0\ChessBoardClass.AssemblyInfoInputs.cache
 C:\Users\Koryun\Desktop\.NET\ChessBoard\ChessBoardClass\obj\Debug\net7.0\ChessBoardClass.AssemblyInfo.cs

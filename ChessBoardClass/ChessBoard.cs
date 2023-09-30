@@ -1,118 +1,64 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
 
-namespace ChessBoardClass.Shared;
-
-
-public class ChessBoard
+namespace ChessBoardClass.Shared
 {
-    private ChessSquare[,] board;
-
-    public ChessBoard()
+    public class ChessBoard
     {
-        board = new ChessSquare[8, 8];
-        InitializeBoard();
-    }
+        private ChessSquare[,] chessboard;
 
-    private void InitializeBoard()
-    {
-        for (int row = 0; row < 8; row++)
+        public ChessBoard()
         {
-            for (int col = 0; col < 8; col++)
+            InitializeChessboard();
+        }
+
+        private void InitializeChessboard()
+        {
+            chessboard = new ChessSquare[8, 8];
+
+            foreach (string coordinateString in Coordinate.AllCoordinates)
             {
-                
-                board[row, col] = square;
+                Coordinate.SetCodrdinate(coordinateString);
+                int x = Coordinate.X;
+                int y = Coordinate.Y;
+                chessboard[x, y] = new ChessSquare();
             }
         }
-    }
 
-
-#region logic
-
-   
-    // public void SetFigureAtPosition(IFigure figure, int row, int col)
-    // {   
-    //     int crow = 8 - row;
-    //     int ccol = col - 1;
-
-
-    //     if(!(row < 0 || row >= 8 || col < 0 || col >= 8))
-    //     {
-    //         try
-    //         {
-
-    //             for (int row1 = 0; row1 < 8; row1++)
-    //             {
-    //                 for (int col1 = 0; col1 < 8; col1++)
-    //                 {
-    //                     if(figure.CanMoveToPosition(crow, ccol,row1,col1))
-    //                     {
-    //                             board[row1, col1].Piece = '1';
-    //                     }
-                
-                        
-    //                 }
-    //             }
-
-    //             board[crow, ccol].InitFigure(figure);
-
-    //             board[crow+1, ccol+1].Piece = '2';
-    //             board[crow-1, ccol+1].Piece = '2';
-    //             board[crow+1, ccol-1].Piece = '2';
-    //             board[crow-1, ccol-1].Piece = '2';
-
-
-                
-    //             board[crow, ccol+1].Piece = '3';
-    //             board[crow, ccol-1].Piece = '3';
-    //             board[crow+1, ccol].Piece = '3';
-    //             board[crow-1, ccol].Piece = '3';
-    //         }
-
-    //         catch(Exception e)
-    //         {
-    //             Console.WriteLine("INVALID INPUT ENTRY..."+ e.Message) ;
-    //         }
-    //     }
-        
-    // }
-
-#endregion
-
-    public void PrintBoard()
-    {
-        Console.WriteLine("  A B C D E F G H"); 
-
-        for (int row = 0; row < 8; row++)
+        public void PrintChessboard()
         {
-            Console.Write(8 - row + " "); 
+            Console.WriteLine("  A  B  C  D  E  F  G  H");
+            
 
-            for (int col = 0; col < 8; col++)
+            foreach (string coordinateString in Coordinate.AllCoordinates)
+            {
+                Coordinate.SetCodrdinate(coordinateString);
+                int x = Coordinate.X;
+                int y = Coordinate.Y;
 
-            {   
-                Console.BackgroundColor = (row + col) % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Yellow;
-                
-                if(board[row,col].IsOccupied)
+                if (y == 0)
                 {
-                    
-                    
-                    Console.ForegroundColor = board[row,col].Figure.Color;
-                    Console.Write(board[row, col].Piece + " ");
+                    Console.Write((8 - x));
                 }
-                else
-                {   
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(board[row,col].Piece + " ");
-                }
-                
-            }
+                Console.BackgroundColor = (x + y) % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Yellow;
+                Console.Write($" {chessboard[x, y].Piece} ");
+                Console.ResetColor();
+               // Console.Write("|");
 
-            Console.ResetColor();
-            Console.WriteLine(" " + (8 - row)); 
+                if (y == 7)
+                {
+                    Console.WriteLine("");
+                }
+            }
         }
 
-        Console.WriteLine("  A B C D E F G H");
+        // Add other chess-related methods here
+
+        public void MovePiece(string fromCoordinate, string toCoordinate)
+        {
+            // Implement piece movement logic here
+        }
+
+        // More methods for managing the game
+
     }
- 
 }
-
-

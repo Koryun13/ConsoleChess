@@ -4,19 +4,29 @@ using ChessBoardClass.Shared;
 using System.Diagnostics;
 
 
-IFigure knight = new Knight(ConsoleColor.White);
-IFigure king =  new King(ConsoleColor.Black);
-IFigure queen = new Queen(ConsoleColor.White);
-IFigure bishop = new Bishop(ConsoleColor.White);
-IFigure rook = new Rook(ConsoleColor.White);
+// IFigure knight = new Knight(ConsoleColor.White);
+// IFigure king =  new King(ConsoleColor.Black);
+// IFigure queen = new Queen(ConsoleColor.White);
+// IFigure bishop = new Bishop(ConsoleColor.White);
+// IFigure rook = new Rook(ConsoleColor.White);
 
 
 ChessBoard chessBoard1 = new ChessBoard();
-chessBoard1.SetFigureAtPosition(knight,3,(int)ChessCrod.C);
-chessBoard1.PrintBoard();
+//chessBoard1.SetFigureAtPosition(knight,3,(int)ChessCrod.C);
+chessBoard1.PrintChessboard();
+
+//ChessSquare[,] board = new ChessSquare[8, 8]; 
+
+ //cordinate.SetCodrdinate("H5");
+ 
 
 
+//  foreach( string cordinate1 in Coordinate.AllCoordinates)
+//  {
+//     Coordinate.SetCodrdinate(cordinate1);
+//     board[Coordinate.X, Coordinate.Y] = default;
 
+//  }
 
 
 
