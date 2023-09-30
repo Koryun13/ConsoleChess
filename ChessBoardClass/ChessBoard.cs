@@ -17,9 +17,8 @@ namespace ChessBoardClass.Shared
 
             foreach (string coordinateString in Coordinate.AllCoordinates)
             {
-                Coordinate.SetCodrdinate(coordinateString);
-                int x = Coordinate.X;
-                int y = Coordinate.Y;
+              var (x,y) =  Coordinate.SetCoordinate(coordinateString);
+                
                 chessboard[x, y] = new ChessSquare();
             }
         }
@@ -31,9 +30,8 @@ namespace ChessBoardClass.Shared
 
             foreach (string coordinateString in Coordinate.AllCoordinates)
             {
-                Coordinate.SetCodrdinate(coordinateString);
-                int x = Coordinate.X;
-                int y = Coordinate.Y;
+                
+                var (x,y) = Coordinate.SetCoordinate(coordinateString);
 
                 if (y == 0)
                 {

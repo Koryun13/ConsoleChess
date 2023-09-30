@@ -9,6 +9,6 @@ public interface IFigure
      char GetSymbol();
      void Attack();
      void Move();
-     public bool CanMoveToPosition(int cRow, int cCol, int nRow, int nCol);
+     public bool CanMoveToPosition(string currentPosString, string newPosString);
     ///kioioio
 }
